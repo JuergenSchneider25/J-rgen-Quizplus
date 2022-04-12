@@ -11,14 +11,15 @@
     <script src="js/main.js"></script>
 </head>
 <body>
-    <?php
-        echo "Hello Welcome to Quiz!"; 
+ <header></header>
 
-
-        
-    ?>
-    <form action="/q1.php" method="post">
-        <button type="submit">Start</button>
-    </form>
+ <main>
+     <div>Your Scrore</div>
+     <form action="index.php" method="post">
+         <button type="submit">restart</button>
+     </form>
+ </main>
+ 
+ <footer></footer>
 </body>
 </html>

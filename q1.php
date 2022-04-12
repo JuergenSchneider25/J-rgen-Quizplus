@@ -11,14 +11,22 @@
     <script src="js/main.js"></script>
 </head>
 <body>
-    <?php
-        echo "Hello Welcome to Quiz!"; 
+    <header></header>
 
-
-        
-    ?>
-    <form action="/q1.php" method="post">
-        <button type="submit">Start</button>
-    </form>
+    <main>
+        <div>Which animal has two bumps?</div>
+        <form action="/q2.php" method="post">
+            <input type="checkbox" name="" id="q1">
+            <label for="q1">Camel</label>
+            <input type="checkbox" name="" id="q2">
+            <label for="q2">Tiger</label>
+            <input type="checkbox" name="" id="q3">
+            <label for="q3">Dog</label>
+            <button type="submit">Next</button>
+        </form>
+    </main>
+    
+    <footer></footer>
+    
 </body>
 </html>
