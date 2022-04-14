@@ -14,7 +14,7 @@
 
 <body>
     <header></header>
-    
+
     <main>
         <div>Whats is a Mammal?</div>
         <form action="eval.php" method="post">
