@@ -2,8 +2,9 @@
 session_start();
 
 $question = $_SESSION['questions'][0]['Text'];
-
-
+$answer1 = $_SESSION['questions'][0]['answers'][0]['Text'];
+$answer2 = $_SESSION['questions'][0]['answers'][1]['Text'];
+$answer3 = $_SESSION['questions'][0]['answers'][2]['Text'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,11 +27,11 @@ $question = $_SESSION['questions'][0]['Text'];
         <div><?=$question?></div>
         <form action="/q2.php" method="post">
             <input type="checkbox" name="" id="q1">
-            <label for="q1">Camel</label>
+            <label for="q1"><?=$answer1?></label>
             <input type="checkbox" name="" id="q2">
-            <label for="q2">Tiger</label>
+            <label for="q2"><?=$answer2?></label>
             <input type="checkbox" name="" id="q3">
-            <label for="q3">Dog</label>
+            <label for="q3"><?=$answer3?></label>
             <button type="submit">Next</button>
         </form>
     </main>

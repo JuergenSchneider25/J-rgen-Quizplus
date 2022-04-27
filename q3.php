@@ -3,6 +3,12 @@ session_start();
 
 $question = $_SESSION['questions'][2]['Text'];
 
+$question = $_SESSION['questions'][2]['Text'];
+$answer1 = $_SESSION['questions'][2]['answers'][0]['Text'];
+$answer2 = $_SESSION['questions'][2]['answers'][1]['Text'];
+$answer3 = $_SESSION['questions'][2]['answers'][2]['Text'];
+$answer4 = $_SESSION['questions'][2]['answers'][3]['Text'];
+$answer5 = $_SESSION['questions'][2]['answers'][4]['Text'];
 
 ?>
 
@@ -24,19 +30,19 @@ $question = $_SESSION['questions'][2]['Text'];
     <header></header>
 
     <main>
-        <div><?=$question?></div>
+        <div><?= $question ?></div>
         <form action="eval.php" method="post">
 
             <input type="checkbox" name="" id="q1">
-            <label for="q1">Whale</label>
+            <label for="q1"><?= $answer1 ?></label>
             <input type="checkbox" name="" id="q2">
-            <label for="q2">Crocodile</label>
+            <label for="q2"><?= $answer2 ?></label>
             <input type="checkbox" name="" id="q3">
-            <label for="q3">Dog</label>
+            <label for="q3"><?= $answer3 ?></label>
             <input type="checkbox" name="" id="q3">
-            <label for="q4">Rabbit</label>
+            <label for="q4"><?= $answer4 ?></label>
             <input type="checkbox" name="" id="q3">
-            <label for="q5">Easter Bunny
+            <label for="q5"><?= $answer5 ?>
             </label>
 
             <button type="submit">finish</button>

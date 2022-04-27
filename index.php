@@ -20,6 +20,7 @@ function getQuestions()
     $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Create a multidimensional array with questions
+    
     // holding also the answers to each questions
 
     $query = $dbConnection->query("SELECT * from Questions");
