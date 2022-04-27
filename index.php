@@ -102,7 +102,7 @@ function getQuestions()
     echo '</pre>';
 
     //DevOnly: Debug output to see what is inside the array $question
-   
+
     exit();
 
 
@@ -123,6 +123,7 @@ function getQuestions()
                         ?>
                     </label>
                 </div>
+
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="1" id="flexCheckChecked" ; label class="form-check-label" for="flexCheckChecked">
                     <?php
@@ -135,9 +136,10 @@ function getQuestions()
                     <input types="hidden" names="lastQuestionIndex" value=" <?php echo $currentQuestionIndex; ?>">
                     <input types="hidden" names="nextQuestionIndex" value=" <?php echo $currentQuestionIndex + 1; ?>">
 
-
-
-
+                </div>
+            </form>
+        </div>
+    </div>
 </body>j
 
 </html>

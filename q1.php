@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+$question = $_SESSION['questions'][0]['Text'];
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +23,7 @@
     <header></header>
 
     <main>
-        <div>Which animal has two bumps?</div>
+        <div><?=$question?></div>
         <form action="/q2.php" method="post">
             <input type="checkbox" name="" id="q1">
             <label for="q1">Camel</label>

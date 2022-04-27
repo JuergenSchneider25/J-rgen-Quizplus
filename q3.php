@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+$question = $_SESSION['questions'][2]['Text'];
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +24,7 @@
     <header></header>
 
     <main>
-        <div>Whats is a Mammal?</div>
+        <div><?=$question?></div>
         <form action="eval.php" method="post">
 
             <input type="checkbox" name="" id="q1">

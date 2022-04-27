@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+$question = $_SESSION['questions'][1]['Text'];
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +25,7 @@
     <header></header>
 
     <main>
-        <div>Where do polar bears live?</div>
+        <div><?=$question?></div>
         <form action="q3.php" method="post">
             <input type="checkbox" name="" id="q1">
             <label for="q1">North Pole</label>
