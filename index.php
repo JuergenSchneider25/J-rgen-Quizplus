@@ -20,7 +20,7 @@ function getQuestions()
     $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Create a multidimensional array with questions
-    
+
     // holding also the answers to each questions
 
     $query = $dbConnection->query("SELECT * from Questions");
@@ -40,6 +40,14 @@ function getQuestions()
     }
 
     return $questions;
+}
+
+// check if $_SESSION questions exists
+if (!isset($_SESSION['questions'])) {
+    // echo questions data EXISTS in session <br>`;
+
+    //..... and save data in $_SESSION
+    $_SESSION['questions'] = getQuestions();
 }
 ?>
 
@@ -67,80 +75,6 @@ function getQuestions()
             <button type="submit">Start</button>
         </form>
     </main>
-
-
-
-
-    <?php
-    echo "QuizzPlus!";
-    ?>
-    <?php
-
-
-    //Evaluate data in $_Post variable
-    $currentQuestionIndex = 0;
-
-    if (isset($_POST['lastQuestionIndex'])) {
-        // get data from last post.
-        $lastQuestionIndex = $_POST['lastQuestionIndex'];
-
-        if (isset($_POST['nextQuestionIndex'])) {
-            //Define the index number of the next question.
-            $currentQuestionIndex = $_Post['nextQuestionIndex'];
-        }
-    }
-
-    // check if $_SESSION questions exists
-    if (!isset($_SESSION['questions'])) {
-        // echo questions data EXISTS in session <br>`;
-
-        //..... and save data in $_SESSION
-        $_SESSION['questions'] = getQuestions();
-    }
-
-    echo '<pre>';
-    print_r($_SESSION['questions']);
-    echo '</pre>';
-
-    //DevOnly: Debug output to see what is inside the array $question
-
-    exit();
-
-
-    ?>
-
-    <div class="row">
-        <div class="col-sm-12">
-            <h3> Frage <?php echo $currentQuestionIndex; ?></h3>
-            <p><?php echo $questions[$currentQuestionIndex]['text']; ?></p>
-            <form method="post>">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="0" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        <?php
-                        $Answers = $questions[$currentQuestionIndex]['Answers'];
-                        $Answers = $Answers[0];
-                        echo $Answers['Answer'];
-                        ?>
-                    </label>
-                </div>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckChecked" ; label class="form-check-label" for="flexCheckChecked">
-                    <?php
-                    $answers = $questions[$currentQuestionIndex]['answers'];
-                    echo $answers[1]['answer'];
-                    ?>
-                    </label>
-
-
-                    <input types="hidden" names="lastQuestionIndex" value=" <?php echo $currentQuestionIndex; ?>">
-                    <input types="hidden" names="nextQuestionIndex" value=" <?php echo $currentQuestionIndex + 1; ?>">
-
-                </div>
-            </form>
-        </div>
-    </div>
-</body>j
+</body>
 
 </html>
