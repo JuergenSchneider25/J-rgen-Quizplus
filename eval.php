@@ -1,3 +1,47 @@
+<?php
+include 'data-collector.php';
+include 'index.php';
+
+if (isset($_SESSION ['achievedPointsList'])){
+    $achievedPointsList = $_SESSION['achievedPointsList'];
+}
+
+else {
+    $achievedPointsList = array();
+}
+
+if (isset($_SESSION['maxPointslist'])) {
+    $maxPointsList = $_SESSION ['maxPointsList'];
+}
+
+else {
+    $maxPointsList = array();
+}
+
+$total = 0;
+
+foreach ($achievedPointsList as $key => $value){
+    $total += $value ;
+}
+
+$maxTotal = 0;
+
+foreach ($maxPointsList as $key => $value){
+    $maxTotal += $value ;
+}
+
+if ($total / $maxTotal >= 0.8){
+    $exclamation = "WOW";
+}
+else if ($total / $macTotal >= 0.4){
+    $exclamation = "Cool";
+}
+else {
+    $exclamation = "That Sucks";
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
